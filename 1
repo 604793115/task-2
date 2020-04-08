@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+    int a[10], n, num=0,i,j,l,max=0,sum;
+    cin >> a[num];
+    while (cin.get() != '\n')
+    {
+        num++;
+        cin >> a[num];
+    }
+    for (i = 0;i <= num;i++)
+    {
+        for (l = 0; i + l <= num; l++)
+        {
+            for (j = i,sum = 0; j <= i+l; j++)
+            {
+                sum += a[j];
+            }
+            if (sum >= max)
+                max = sum;
+        }
+    }
+    cout << max;
+    system("pause");
+    return 0;
+}
+
